@@ -18,11 +18,11 @@ $ cd gitlab-web-api-auth-examples-ruby/
 $ bundle install
 ```
 
-You could edit the Gitlab Client Id and Client Secret in `server.rb` file.
+You could edit the Gitlab Client Id and Client Secret in `initializers/ruby_oauth.rb` file.
 ```
 ...
-$client_id = ENV['CLIENT_ID']
-$client_secret = ENV['CLIENT_SECRET']
+  c.client_id = ENV['CLIENT_ID']
+  c.client_secret = ENV['CLIENT_SECRET']
 ...
 ```
 
