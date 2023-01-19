@@ -1,14 +1,14 @@
 # frozen_string_literal: true
 
 def process_callback(request, response)
-  state_cookie = request.cookies.select { |c| c.name == 'gitlab_auth_state' }.first
+  state_cookie = cookie(request, RubyOuath.configuration.cookie_name)
   raise 'error' unless state_cookie.value == request.query['state']
 
   data = {
     code: request.query['code'],
-    redirect_uri: $callback_url,
-    client_id: $client_id,
-    client_secret: $client_secret,
+    redirect_uri: RubyOuath.configuration.callback_url,
+    client_id: RubyOuath.configuration.client_id,
+    client_secret: RubyOuath.configuration.client_secret,
     grant_type: 'authorization_code'
   }
 

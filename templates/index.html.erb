@@ -2,7 +2,7 @@
 <!doctype html>
 <html>
   <head>
-    <title>Example of the Authorization Code flow with Gitlab</title>
+    <title>Example of the Authorization Code flow with <%= RubyOuath.configuration.provider %></title>
     <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
     <style type="text/css">
@@ -19,7 +19,7 @@
     <div class="container">
       <div id="login">
         <h1>This is an example of the Authorization Code flow</h1>
-        <a href="/login" class="btn btn-primary">Log in with Gitlab</a>
+        <a href="/login" class="btn btn-primary">Log in with <%= RubyOuath.configuration.provider %></a>
       </div>
     </div>
   </body>
