@@ -16,6 +16,7 @@ require_relative 'request_handlers/me'
 require_relative 'request_handlers/refresh_token'
 require_relative 'lib/configuration'
 require_relative 'initializers/ruby_oauth'
+require_relative 'lib/provider_client'
 
 server = WEBrick::HTTPServer.new Port: RubyOuath.configuration.webserver_port
 server.mount '/', RequestHandler
