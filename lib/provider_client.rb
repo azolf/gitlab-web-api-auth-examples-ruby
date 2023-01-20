@@ -42,7 +42,6 @@ module RubyOuath
         client_id: RubyOuath.configuration.client_id,
         client_secret: RubyOuath.configuration.client_secret
       }
-      puts data.inspect
       res = RestClient.post(url,
         data,
         {
