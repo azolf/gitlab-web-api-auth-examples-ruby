@@ -20,10 +20,16 @@ $ bundle install
 
 You could edit the Gitlab Client Id and Client Secret in `initializers/ruby_oauth.rb` file.
 ```
-...
-  c.client_id = ENV['CLIENT_ID']
-  c.client_secret = ENV['CLIENT_SECRET']
-...
+version: '3'
+services:
+  app:
+    image: azolf/github-web-api-auth-examples-ruby
+    container_name: github-web-api-auth-examples-ruby
+    ports:
+      - 8000:8000
+    environment:
+      - CLIENT_ID=YOUR_CLIENT_ID
+      - CLIENT_SECRET=YOUR_CLIENT_SECRET
 ```
 
 Or you could pass them as environemnt variables.
